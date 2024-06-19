@@ -1,0 +1,22 @@
+{
+  "name": "ex",
+  "version": "1.0.0",
+  "description": "validacion de numero de cedula",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiago566/Examen_Cedula.git"
+  },
+  "author": "Santiago Pineda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santiago566/Examen_Cedula/issues"
+  },
+  "homepage": "https://github.com/santiago566/Examen_Cedula#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
