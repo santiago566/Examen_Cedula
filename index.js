@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
+
 // Ruta para separar los dígitos en posiciones pares e impares
 app.get('/Cedula/:numero', (req, res) => {
     const { numero } = req.params;
@@ -35,7 +44,7 @@ app.get('/Cedula/:numero', (req, res) => {
     const R=rimpares+rpares;
     const residuo = R % 10;
     const Validar = 10-residuo;
-    const mensaje = (Validar === resultado) ? 'correcto' : 'incorrecto';
+    const mensaje = (Validar === resultado) ? 'Su numero de cedula esta correcto' : 'Su numero de cedula esta incorrecto';
     ;
 
     res.json({
